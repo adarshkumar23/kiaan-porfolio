@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kiaan Jha | Baby Model Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --blush-pink: #ffdbe8;
+      --baby-blue: #d9f0ff;
+      --mint-green: #d9f6e7;
+      --creamy-white: #fffaf2;
+      --soft-lavender: #ece4ff;
+      --accent-pink: #ff80b5;
+      --accent-blue: #91c9ff;
+      --text-main: #544c64;
+      --text-soft: #766f84;
+      --glass: rgba(255, 255, 255, 0.62);
+      --shadow-soft: 0 16px 40px rgba(122, 95, 156, 0.15);
+      --radius-xl: 30px;
+      --radius-md: 18px;
+      --section-gap: clamp(4rem, 9vw, 7rem);
+      --container: min(1100px, 92vw);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Quicksand", sans-serif;
+      color: var(--text-main);
+      background:
+        radial-gradient(circle at 12% 10%, rgba(255, 219, 232, 0.5) 0, transparent 40%),
+        radial-gradient(circle at 88% 20%, rgba(217, 240, 255, 0.5) 0, transparent 40%),
+        radial-gradient(circle at 80% 84%, rgba(217, 246, 231, 0.5) 0, transparent 36%),
+        var(--creamy-white);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: rgba(255, 128, 181, 0.3);
+      color: #4b3f66;
+    }
+
+    ::-webkit-scrollbar {
+      width: 11px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #fff4f8;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 100px;
+      background: linear-gradient(180deg, #ffc0da, #f08ec2);
+      border: 2px solid #fff4f8;
+    }
+
+    .container {
+      width: var(--container);
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: var(--section-gap) 0;
+      position: relative;
+    }
+
+    .section-title {
+      font-family: "Pacifico", cursive;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.2;
+      color: #6f5e87;
+      text-align: center;
+      margin-bottom: clamp(1.5rem, 3vw, 2.2rem);
+      text-shadow: 0 5px 20px rgba(145, 101, 176, 0.12);
+    }
+
+    .sparkle {
+      display: inline-block;
+      animation: twinkle 2.4s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 50;
+      background: var(--glass);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+    }
+
+    .nav-inner {
+      width: var(--container);
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.8rem 0;
+    }
+
+    .logo {
+      font-family: "Pacifico", cursive;
+      color: #694f8d;
+      font-size: clamp(1.25rem, 3vw, 1.6rem);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #6e6281;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255, 255, 255, 0.72);
+      color: #4e3d66;
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(130deg, #ffdbe8, #d9f0ff, #ece4ff, #d9f6e7);
+      background-size: 300% 300%;
+      animation: gradientDrift 12s ease infinite;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.2));
+      pointer-events: none;
+    }
+
+    .hero-content {
+      width: min(900px, 92vw);
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      padding-top: clamp(3rem, 8vh, 5rem);
+      padding-bottom: 2.2rem;
+    }
+
+    .hero-title {
+      font-family: "Pacifico", cursive;
+      font-size: clamp(2.8rem, 10vw, 6rem);
+      line-height: 1.05;
+      color: #674a89;
+      text-shadow: 0 12px 30px rgba(102, 76, 131, 0.22);
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(24px) scale(0.98);
+      animation: wordReveal 0.8s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+    }
+
+    .hero-tagline,
+    .hero-subtext {
+      opacity: 0;
+      animation: fadeLift 1s ease forwards;
+    }
+
+    .hero-tagline {
+      font-size: clamp(1.1rem, 3.1vw, 1.8rem);
+      color: #6e5a8d;
+      font-weight: 700;
+      animation-delay: 0.9s;
+      margin-bottom: 0.65rem;
+    }
+
+    .hero-subtext {
+      font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+      color: #6f6982;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      animation-delay: 1.15s;
+      margin-bottom: 1.8rem;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      outline: none;
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(120deg, #ff85be, #ff6da8);
+      padding: 0.9rem 1.6rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 12px 30px rgba(255, 109, 168, 0.3);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      opacity: 0;
+      animation: fadeLift 1s ease forwards 1.35s;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 16px 32px rgba(255, 109, 168, 0.4);
+    }
+
+    .floating-shape {
+      position: absolute;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.65;
+      animation: floatUpDown 8s ease-in-out infinite;
+    }
+
+    .floating-shape.cloud {
+      width: clamp(90px, 18vw, 180px);
+      height: clamp(42px, 8vw, 72px);
+      background: rgba(255, 255, 255, 0.65);
+      border-radius: 80px;
+      box-shadow: inset 0 -8px 14px rgba(255, 255, 255, 0.35), 0 10px 25px rgba(124, 103, 163, 0.14);
+    }
+
+    .floating-shape.cloud::before,
+    .floating-shape.cloud::after {
+      content: "";
+      position: absolute;
+      background: inherit;
+      border-radius: 50%;
+    }
+
+    .floating-shape.cloud::before {
+      width: 40%;
+      height: 70%;
+      left: 12%;
+      top: -35%;
+    }
+
+    .floating-shape.cloud::after {
+      width: 36%;
+      height: 65%;
+      right: 15%;
+      top: -28%;
+    }
+
+    .floating-shape.bubble {
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.36));
+      box-shadow: 0 12px 30px rgba(112, 145, 182, 0.16);
+    }
+
+    .floating-shape.star {
+      font-size: clamp(1.2rem, 2.4vw, 2rem);
+      animation-duration: 6s;
+    }
+
+    .shape-1 {
+      top: 15%;
+      left: 8%;
+      animation-delay: 0.1s;
+    }
+
+    .shape-2 {
+      top: 20%;
+      right: 8%;
+      width: clamp(50px, 7vw, 90px);
+      height: clamp(50px, 7vw, 90px);
+      animation-delay: 1.2s;
+    }
+
+    .shape-3 {
+      bottom: 16%;
+      left: 12%;
+      width: clamp(32px, 6vw, 60px);
+      height: clamp(32px, 6vw, 60px);
+      animation-delay: 0.6s;
+    }
+
+    .shape-4 {
+      top: 34%;
+      right: 14%;
+      animation-delay: 0.9s;
+      color: #ffc85b;
+    }
+
+    .shape-5 {
+      bottom: 13%;
+      right: 12%;
+      animation-delay: 1.4s;
+      color: #fff;
+    }
+
+    .about-card,
+    .booking-card,
+    .contact-card {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.6));
+      border: 1px solid rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+      padding: clamp(1.4rem, 3vw, 2rem);
+    }
+
+    .about-card {
+      max-width: 850px;
+      margin: 0 auto;
+      text-align: center;
+      background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(234, 251, 245, 0.78));
+    }
+
+    .about-icon {
+      font-size: clamp(2.2rem, 5vw, 3rem);
+      margin-bottom: 0.7rem;
+      display: inline-block;
+      animation: bob 3s ease-in-out infinite;
+    }
+
+    .about-text {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      line-height: 1.8;
+      color: #5f546f;
+      font-weight: 600;
+    }
+
+    .highlights-grid {
+      display: grid;
+      gap: 1.1rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
+    }
+
+    .badge-card {
+      border-radius: var(--radius-md);
+      padding: 1.3rem 1rem;
+      text-align: center;
+      box-shadow: 0 14px 28px rgba(135, 113, 165, 0.14);
+      opacity: 0;
+      transform: translateY(22px) scale(0.96);
+    }
+
+    .badge-card:nth-child(1) {
+      background: linear-gradient(145deg, #ffe8f1, #ffdbe8);
+    }
+
+    .badge-card:nth-child(2) {
+      background: linear-gradient(145deg, #def3ff, #d9f0ff);
+    }
+
+    .badge-card:nth-child(3) {
+      background: linear-gradient(145deg, #e5fbe8, #d9f6e7);
+    }
+
+    .badge-card.in-view {
+      animation: badgeBounce 0.9s cubic-bezier(0.2, 1.2, 0.3, 1) forwards;
+    }
+
+    .badge-icon {
+      font-size: 1.85rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .badge-title {
+      font-weight: 700;
+      color: #594f6f;
+      font-size: clamp(0.95rem, 2.3vw, 1.1rem);
+    }
+
+    .gallery-shell {
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    .gallery-row {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .masonry-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+      grid-auto-rows: 90px;
+    }
+
+    .masonry-item {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      cursor: pointer;
+    }
+
+    .masonry-item.tall {
+      grid-row: span 4;
+    }
+
+    .masonry-item.medium {
+      grid-row: span 3;
+    }
+
+    .masonry-item.short {
+      grid-row: span 2;
+    }
+
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 0.9rem;
+    }
+
+    .split-large,
+    .split-stack figure,
+    .film-frame,
+    .polaroid-photo,
+    .circle-photo {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      cursor: pointer;
+      background: #fff;
+    }
+
+    .split-large {
+      min-height: 410px;
+    }
+
+    .split-stack {
+      display: grid;
+      gap: 0.9rem;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .split-stack figure {
+      min-height: 200px;
+    }
+
+    .filmstrip {
+      display: flex;
+      gap: 0.9rem;
+      overflow-x: auto;
+      padding-bottom: 0.45rem;
+      scroll-snap-type: x mandatory;
+    }
+
+    .filmstrip::-webkit-scrollbar {
+      height: 9px;
+    }
+
+    .filmstrip::-webkit-scrollbar-thumb {
+      background: #f4afcf;
+      border-radius: 999px;
+    }
+
+    .film-frame {
+      min-width: min(380px, 76vw);
+      height: 235px;
+      border: 6px solid #111;
+      border-radius: 14px;
+      position: relative;
+      scroll-snap-align: start;
+      box-shadow: 0 18px 30px rgba(20, 20, 20, 0.18);
+    }
+
+    .film-frame::before,
+    .film-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: radial-gradient(circle, rgba(255, 255, 255, 0.5) 26%, transparent 27%);
+      background-size: 24px 24px;
+      mix-blend-mode: soft-light;
+      opacity: 0.5;
+    }
+
+    .polaroid-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .polaroid-card {
+      background: #fff;
+      border-radius: 6px;
+      padding: 0.55rem 0.55rem 0.95rem;
+      box-shadow: 0 14px 30px rgba(73, 53, 97, 0.16);
+      transform: rotate(var(--tilt, 0deg));
+      transition: transform 0.25s ease;
+    }
+
+    .polaroid-card:hover {
+      transform: rotate(0deg) translateY(-4px) scale(1.02);
+    }
+
+    .polaroid-photo {
+      border-radius: 4px;
+      height: 250px;
+      border: 2px solid #f4f4f4;
+    }
+
+    .polaroid-card figcaption {
+      text-align: center;
+      margin-top: 0.7rem;
+      font-family: "Pacifico", cursive;
+      color: #6b5984;
+      font-size: 1.05rem;
+    }
+
+    .circle-overlap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 0.6rem 0.4rem;
+    }
+
+    .circle-wrap {
+      width: clamp(105px, 18vw, 185px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 7px solid rgba(255, 255, 255, 0.9);
+      background: linear-gradient(140deg, #ffdbe8, #d9f0ff, #d9f6e7);
+      box-shadow: 0 16px 30px rgba(87, 66, 109, 0.16);
+      margin-left: -0.9rem;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    .circle-wrap:nth-child(odd) {
+      margin-top: 1.4rem;
+    }
+
+    .circle-wrap:nth-child(1) {
+      margin-left: 0;
+      z-index: 2;
+    }
+
+    .circle-wrap:nth-child(3) {
+      z-index: 3;
+    }
+
+    .circle-wrap:nth-child(5) {
+      z-index: 2;
+    }
+
+    .circle-photo {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      box-shadow: none;
+    }
+
+    .gallery-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease, filter 0.35s ease;
+    }
+
+    .zoomable:hover .gallery-image {
+      transform: scale(1.08);
+      filter: saturate(1.1);
+    }
+
+    .booking-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .booking-card {
+      text-align: center;
+      background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(238, 246, 255, 0.7));
+    }
+
+    .booking-lines {
+      list-style: none;
+      display: grid;
+      gap: 0.9rem;
+      font-size: clamp(1rem, 2.5vw, 1.12rem);
+      color: #5d5271;
+      font-weight: 700;
+    }
+
+    .social-wrap {
+      text-align: center;
+    }
+
+    .social-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      margin-top: 1.2rem;
+    }
+
+    .social-btn {
+      text-decoration: none;
+      color: #594e70;
+      font-weight: 700;
+      background: #fff;
+      border: 2px solid transparent;
+      border-radius: 999px;
+      padding: 0.75rem 1.15rem;
+      box-shadow: 0 10px 24px rgba(95, 77, 116, 0.14);
+      transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+      min-width: 145px;
+    }
+
+    .social-btn:hover {
+      transform: translateY(-3px) scale(1.04);
+      background: #fff3f8;
+      border-color: #ffc3df;
+    }
+
+    .contact-card {
+      max-width: 760px;
+      margin: 0 auto;
+      background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(255, 231, 244, 0.7));
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .field {
+      display: grid;
+      gap: 0.45rem;
+      text-align: left;
+    }
+
+    .field label {
+      font-weight: 700;
+      color: #66597c;
+    }
+
+    .field input,
+    .field textarea {
+      border: 2px solid #f4cee1;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 14px;
+      padding: 0.8rem 0.9rem;
+      font: inherit;
+      color: #534a64;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .field textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: #eb8fbc;
+      box-shadow: 0 0 0 3px rgba(255, 135, 188, 0.2);
+    }
+
+    .submit-btn {
+      border: none;
+      outline: none;
+      border-radius: 999px;
+      padding: 0.85rem 1.3rem;
+      background: linear-gradient(125deg, #ff8abf, #ff6eaa);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      justify-self: start;
+      box-shadow: 0 12px 25px rgba(255, 110, 170, 0.32);
+      transition: transform 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.4rem 1rem 2rem;
+      color: #6f6282;
+      font-weight: 700;
+      font-size: 0.96rem;
+      position: relative;
+    }
+
+    .footer-sparkle {
+      display: inline-block;
+      margin-left: 0.2rem;
+      animation: twinkle 1.8s ease-in-out infinite;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(23, 19, 36, 0.84);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      padding: 1rem;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-content {
+      max-width: min(960px, 95vw);
+      max-height: 88vh;
+      border-radius: 16px;
+      border: 5px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 24px 55px rgba(0, 0, 0, 0.35);
+      overflow: hidden;
+      position: relative;
+      animation: zoomIn 0.28s ease;
+      background: #fff;
+    }
+
+    .lightbox-content img {
+      width: 100%;
+      height: 100%;
+      max-height: 88vh;
+      display: block;
+      object-fit: contain;
+      background: #fff;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 0.6rem;
+      right: 0.75rem;
+      border: none;
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      line-height: 1;
+      background: rgba(255, 255, 255, 0.86);
+      color: #4f3f65;
+      box-shadow: 0 8px 18px rgba(33, 22, 46, 0.25);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes wordReveal {
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes fadeLift {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes gradientDrift {
+      0% {
+        background-position: 0% 40%;
+      }
+      50% {
+        background-position: 100% 60%;
+      }
+      100% {
+        background-position: 0% 40%;
+      }
+    }
+
+    @keyframes floatUpDown {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-16px);
+      }
+    }
+
+    @keyframes twinkle {
+      0%,
+      100% {
+        transform: scale(0.9);
+        opacity: 0.75;
+      }
+      50% {
+        transform: scale(1.15);
+        opacity: 1;
+      }
+    }
+
+    @keyframes bob {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    @keyframes badgeBounce {
+      0% {
+        opacity: 0;
+        transform: translateY(28px) scale(0.92);
+      }
+      58% {
+        opacity: 1;
+        transform: translateY(-10px) scale(1.02);
+      }
+      80% {
+        transform: translateY(4px) scale(0.99);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.92);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .split-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .split-large {
+        min-height: 280px;
+      }
+
+      .split-stack {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+      }
+
+      .highlights-grid,
+      .polaroid-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .masonry-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .highlights-grid,
+      .polaroid-grid,
+      .masonry-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .masonry-item.tall,
+      .masonry-item.medium,
+      .masonry-item.short {
+        grid-row: span 3;
+      }
+
+      .split-stack {
+        grid-template-columns: 1fr;
+      }
+
+      .film-frame {
+        min-width: min(88vw, 430px);
+      }
+
+      .social-btn {
+        min-width: 125px;
+      }
+
+      .circle-wrap {
+        margin-left: -0.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a class="logo" href="#hero">Kiaan Jha ✨</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#booking">Booking</a></li>
+        <li><a href="#social">Social</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header id="hero" class="hero">
+    <div class="floating-shape cloud shape-1"></div>
+    <div class="floating-shape bubble shape-2"></div>
+    <div class="floating-shape bubble shape-3"></div>
+    <div class="floating-shape star shape-4">⭐</div>
+    <div class="floating-shape star shape-5">✨</div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="hero-word">Kiaan</span>
+        <span class="hero-word">Jha</span>
+        <span class="hero-word">✨</span>
+      </h1>
+      <p class="hero-tagline">Born to Shine — Gurugram's Tiniest Superstar 🌟</p>
+      <p class="hero-subtext">9 Months Young · Baby Model · Rising Star</p>
+      <a class="cta-btn" href="#contact">📩 Book Kiaan</a>
+    </div>
+  </header>
+
+  <section id="about" class="section reveal">
+    <div class="container">
+      <h2 class="section-title">About Kiaan <span class="sparkle">✨</span></h2>
+      <article class="about-card">
+        <span class="about-icon" aria-hidden="true">🍼</span>
+        <p class="about-text">
+          Meet Kiaan Jha — 9 months young and already stealing hearts across Gurugram.
+          With his infectious smile and natural charm, Kiaan is making his mark in the world
+          of baby modelling and cinema. This little star is just getting started! 🍼✨
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container">
+      <h2 class="section-title">Highlights <span class="sparkle">⭐</span></h2>
+      <div class="highlights-grid">
+        <article class="badge-card">
+          <span class="badge-icon">🎬</span>
+          <h3 class="badge-title">Selected for Film Role</h3>
+        </article>
+        <article class="badge-card">
+          <span class="badge-icon">👶</span>
+          <h3 class="badge-title">Professional Baby Model</h3>
+        </article>
+        <article class="badge-card">
+          <span class="badge-icon">📍</span>
+          <h3 class="badge-title">Based in Gurugram, Haryana</h3>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section reveal">
+    <div class="container">
+      <h2 class="section-title">Photo Gallery <span class="sparkle">✨</span></h2>
+      <div class="gallery-shell">
+        <div class="gallery-row masonry-grid">
+          <figure class="masonry-item tall zoomable">
+            <img class="gallery-image" data-file="WhatsApp Image 2026-04-27 at 8.32.36 PM.jpeg" alt="Kiaan portrait in soft light" />
+          </figure>
+          <figure class="masonry-item medium zoomable">
+            <img class="gallery-image" data-file="WhatsApp Image 2026-04-27 at 8.32.37 PM (1).jpeg" alt="Kiaan smiling in candid shot" />
+          </figure>
+          <figure class="masonry-item short zoomable">
+            <img class="gallery-image" data-file="WhatsApp Image 2026-04-27 at 8.32.37 PM.jpeg" alt="Kiaan close-up baby model look" />
+          </figure>
+        </div>
+
+        <div class="gallery-row split-grid">
+          <figure class="split-large zoomable">
+            <img class="gallery-image" data-file="WhatsApp Image 2026-04-27 at 8.32.38 PM (1).jpeg" alt="Kiaan hero style portrait" />
+          </figure>
+          <div class="split-stack">
+            <figure class="zoomable">
+              <img class="gallery-image" data-file="WhatsApp Image 2026-04-27 at 8.32.38 PM.jpeg" alt="Kiaan in playful pose" />
+            </figure>
+            <figure class="zoomable">
+              <img class="gallery-image" data-file="WhatsApp Image 2026-04-27 at 8.32.40 PM (1).jpeg" alt="Kiaan adorable expression" />
+            </figure>
+          </div>
+        </div>
+
+        <div class="gallery-row">
+          <div class="filmstrip" aria-label="Horizontal reel gallery">
+            <figure class="film-frame zoomable">
+              <img class="gallery-image" data-file="WhatsApp Image 2026-04-27 at 8.32.40 PM.jpeg" alt="Kiaan in reel frame one" />
+            </figure>
+            <figure class="film-frame zoomable">
+              <img class="gallery-image" data-file="WhatsApp Image 2026-04-27 at 8.32.41 PM (1).jpeg" alt="Kiaan in reel frame two" />
+            </figure>
+          </div>
+        </div>
+
+        <div class="gallery-row polaroid-grid">
+          <figure class="polaroid-card zoomable">
+            <div class="polaroid-photo">
+              <img class="gallery-image" data-file="WhatsApp Image 2026-04-27 at 8.32.41 PM (2).jpeg" alt="Kiaan polaroid portrait one" />
+            </div>
+            <figcaption>Kiaan 🌟</figcaption>
+          </figure>
+          <figure class="polaroid-card zoomable">
+            <div class="polaroid-photo">
+              <img class="gallery-image" data-file="WhatsApp Image 2026-04-27 at 8.32.41 PM.jpeg" alt="Kiaan polaroid portrait two" />
+            </div>
+            <figcaption>Kiaan 🌟</figcaption>
+          </figure>
+          <figure class="polaroid-card zoomable">
+            <div class="polaroid-photo">
+              <img class="gallery-image" data-file="WhatsApp Image 2026-04-27 at 8.32.42 PM (1).jpeg" alt="Kiaan polaroid portrait three" />
+            </div>
+            <figcaption>Kiaan 🌟</figcaption>
+          </figure>
+        </div>
+
+        <div class="gallery-row">
+          <div class="circle-overlap">
+            <figure class="circle-wrap zoomable">
+              <div class="circle-photo">
+                <img class="gallery-image" data-file="WhatsApp Image 2026-04-27 at 8.32.42 PM.jpeg" alt="Kiaan circle portrait one" />
+              </div>
+            </figure>
+            <figure class="circle-wrap zoomable">
+              <div class="circle-photo">
+                <img class="gallery-image" data-file="WhatsApp Image 2026-04-27 at 9.03.22 PM (1).jpeg" alt="Kiaan circle portrait two" />
+              </div>
+            </figure>
+            <figure class="circle-wrap zoomable">
+              <div class="circle-photo">
+                <img class="gallery-image" data-file="WhatsApp Image 2026-04-27 at 9.03.22 PM.jpeg" alt="Kiaan circle portrait three" />
+              </div>
+            </figure>
+            <figure class="circle-wrap zoomable">
+              <div class="circle-photo">
+                <img class="gallery-image" data-file="WhatsApp Image 2026-04-27 at 9.03.23 PM (1).jpeg" alt="Kiaan circle portrait four" />
+              </div>
+            </figure>
+            <figure class="circle-wrap zoomable">
+              <div class="circle-photo">
+                <img class="gallery-image" data-file="WhatsApp Image 2026-04-27 at 9.03.23 PM.jpeg" alt="Kiaan circle portrait five" />
+              </div>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="booking" class="section reveal">
+    <div class="container booking-grid">
+      <h2 class="section-title">Work With Kiaan 💼</h2>
+      <article class="booking-card">
+        <ul class="booking-lines">
+          <li>📧 sharmavinti3@gmail.com</li>
+          <li>📞 9279302079</li>
+          <li>📍 Gurugram, Haryana</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="social" class="section reveal">
+    <div class="container social-wrap">
+      <h2 class="section-title">Follow Kiaan's Journey 🌈</h2>
+      <div class="social-buttons">
+        <a href="#" class="social-btn" aria-label="Kiaan Instagram">📸 Instagram</a>
+        <a href="#" class="social-btn" aria-label="Kiaan Facebook">💙 Facebook</a>
+        <a href="#" class="social-btn" aria-label="Kiaan YouTube">▶️ YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section reveal">
+    <div class="container">
+      <h2 class="section-title">Contact Kiaan <span class="sparkle">⭐</span></h2>
+      <article class="contact-card">
+        <form class="contact-form" id="contact-form" action="mailto:sharmavinti3@gmail.com" method="post" enctype="text/plain">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="Name" type="text" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="Email" type="email" required />
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="Phone" type="tel" required />
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="Message" required></textarea>
+          </div>
+          <button class="submit-btn" type="submit">Send Inquiry</button>
+        </form>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Kiaan Jha · Gurugram, Haryana <span class="footer-sparkle">💫</span>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close image">×</button>
+      <img id="lightbox-image" src="" alt="Expanded gallery image" />
+    </div>
+  </div>
+
+  <script>
+    const galleryImages = document.querySelectorAll(".gallery-image");
+    galleryImages.forEach((img) => {
+      const filename = img.dataset.file;
+      if (filename) {
+        img.src = `images/${encodeURIComponent(filename)}`;
+      }
+    });
+
+    const words = document.querySelectorAll(".hero-word");
+    words.forEach((word, index) => {
+      word.style.animationDelay = `${index * 0.2 + 0.1}s`;
+    });
+
+    const revealItems = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          entry.target.classList.add("visible");
+
+          const badges = entry.target.querySelectorAll(".badge-card");
+          badges.forEach((badge, index) => {
+            setTimeout(() => badge.classList.add("in-view"), index * 120);
+          });
+
+          obs.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.18,
+      }
+    );
+
+    revealItems.forEach((item) => observer.observe(item));
+
+    const polaroids = document.querySelectorAll(".polaroid-card");
+    polaroids.forEach((card) => {
+      const tilt = (Math.random() * 6 - 3).toFixed(2);
+      card.style.setProperty("--tilt", `${tilt}deg`);
+    });
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const lightboxClose = document.getElementById("lightbox-close");
+
+    function openLightbox(src, altText) {
+      lightboxImage.src = src;
+      lightboxImage.alt = altText || "Expanded gallery image";
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      lightboxImage.src = "";
+    }
+
+    galleryImages.forEach((img) => {
+      img.addEventListener("click", () => openLightbox(img.src, img.alt));
+    });
+
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && lightbox.classList.contains("open")) {
+        closeLightbox();
+      }
+    });
+
+    const contactForm = document.getElementById("contact-form");
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const subject = encodeURIComponent(`Booking Inquiry for Kiaan Jha from ${name}`);
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
+      );
+
+      window.location.href = `mailto:sharmavinti3@gmail.com?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
